@@ -1,4 +1,4 @@
-* System description
+# System description
 
 This design is asynchronous, meaning it uses diodes for the low-side switching function. It also uses P-channel MOSFETs for the switching functions. Use of P-channel MOSFETs means there is no need for a charge pump. the asychronouse design means that the software is relatively simple and there is no transition between Continuous Current Mode (CCM) and Discontinuous Current Mode (DCM) as there would be for a synchronous design. 
 
@@ -6,17 +6,17 @@ The spreadsheet provides analysis of the losses from the 5 main switching compon
 
 Because of the asynchronous design, the low side diode D1 consumes a significant part of the total loss energy (about 3.7% of the carried power, and almost 45% of the total loss at 20 Amps). 
 
-* Capacitor
+# Capacitor
 
 The critical value for the input capacitor (C1) is its Equivalent Series Resistance (ESR). With a 20 Amp inductor current, the RMS current in the input capacitor is almost 10 Amps. ESR values are not normally published, especially for cheaper capacitors even if they are marketed as "low ESR". In the past I bought a range of capacitors and tested the ESR, and did an assessment of the best way to achieve a low ESR and a low temperature rise. 
 
 Based on that assessment, this design needs at least 6, and preferably 8, 100 uF electrolytic capacitors in parallel to form C1. This will give a combined ESR of 26 milli Ohms for a power loss of 2.6 Watts and a temperature rise of 26 C (for 8 capacitors). 
 
-* Reverse current prevention switch Q1
+# Reverse current prevention switch Q1
 
 This will be a single MOSFET IRF4905 which has an ON resistance of 20 milli Ohms at 25C, rising to 36 milli Ohms at 175 C. For this analysis I use the 175C value. This MOSFET only has to carry the maximum power point current of the solar panel, with no AC component and no switching activity. The loss is 2.3 Watts and assuming a good heat sink and a thermal resistance of 20 C per Watt gives a temperature rise of 46C which is acceptable. 
 
-* high side switch Q2
+# high side switch Q2
 
 This MOSFET performs the most critical function in the DC-DC conversion process. The IRF4905 is not an ideal one for this function. Much better MOSFETs exist but they are all N-channel (that I have been able to find, anyway). 
 
@@ -29,11 +29,11 @@ Gate drive loss: 0.15 Watts
 Total            4.4 Watts
 Distributed across 2 MOSFETs with good heat sinks this leads to a temperature rise of 43C which is acceptable. That is at a switching frequency of 70 kHz. More on that later. 
 
-* Low side switch D3
+# Low side switch D3
 
 As mentioned above, the loss in this diode is the biggest problem. I am using 4 high power TO220 Schottky diodes in parallel to achieve a loss of 9 Watts and a temperature rise of 45C, also assuming good heat sinking. 
 
-* Inductor L1
+# Inductor L1
 
 This is another critical component. The analysis of losses in inductors is another very complext process. The main components are DC loss and core loss. The core loss is the result of hysteresis in the magnetisation cycle of the core material. The equations in the spreadsheet follow those given in the data sheets from one of the toroid core manufacturers. 
 
@@ -53,10 +53,18 @@ Core loss: 0.8 Watts
 Total:     3   Watts
 Temperature rise: 35 C. 
 
-* Summary of losses
+# Summary of losses
+
 Totalling these values, we have:
+
 Capacitor    C1 2.6 Watts 26C
+
 Reverse flow Q1 2.3 Watts 46C
+
 High switch  Q2 4.4 Watts 44C           
+
 Low diodes   D3 9   Watts 45C
+
 Inductor     L1 3   Watts 35C
+
+Total           21  Watts
