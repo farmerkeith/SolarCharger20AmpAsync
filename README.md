@@ -16,3 +16,5 @@ An LCD character display provides status information. A push button turns on the
 The schematic circuit diagram has been prepared using KiCad. 
 
 12 May 2018. Added reset button. Added USB B-connector (for programming).
+ Included spreadsheet analysis and system description document.
+
