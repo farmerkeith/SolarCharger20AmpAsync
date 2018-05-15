@@ -19,3 +19,6 @@ The schematic circuit diagram has been prepared using KiCad.
 12 May 2018. Added reset button. Added USB B-connector (for programming).
  Included spreadsheet analysis and system description document.
 
+15 May 2018. Prepared BOM. Minor corrections to component values.
+
+
