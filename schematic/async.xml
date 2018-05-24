@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/guy/aProjects/Solar charger/Harry/async/schematic/async.sch</source>
-    <date>Sat 19 May 2018 15:52:19 AEST</date>
+    <date>Thu 24 May 2018 13:54:10 AEST</date>
     <tool>Eeschema 4.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -268,7 +268,7 @@
       <tstamp>5AF7134B</tstamp>
     </comp>
     <comp ref="D9">
-      <value>2W01G</value>
+      <value>GBJ1506</value>
       <libsource lib="device" part="D_Bridge_+-AA"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5AFA9C95</tstamp>
@@ -1036,20 +1036,20 @@
     </libpart>
   </libparts>
   <libraries>
+    <library logical="atmel">
+      <uri>/usr/share/kicad/library/atmel.lib</uri>
+    </library>
     <library logical="Modules">
       <uri>/home/guy/aProjects/KiCAD/lib_sch/Modules.lib</uri>
-    </library>
-    <library logical="device">
-      <uri>/usr/share/kicad/library/device.lib</uri>
-    </library>
-    <library logical="switches">
-      <uri>/usr/share/kicad/library/switches.lib</uri>
     </library>
     <library logical="conn">
       <uri>/usr/share/kicad/library/conn.lib</uri>
     </library>
-    <library logical="atmel">
-      <uri>/usr/share/kicad/library/atmel.lib</uri>
+    <library logical="switches">
+      <uri>/usr/share/kicad/library/switches.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
     </library>
   </libraries>
   <nets>

@@ -40,7 +40,7 @@ Reference, Value, Footprint, Datasheet
 "R18","470","",""
 "R19","470","",""
 "U10","ATMEGA328-PU","DIL28",""
-"D9","2W01G","",""
+"D9","GBJ1506","",""
 "J4","Main voltage Screw Terminal","",""
 "C3.1","100uF","",""
 "C3.2","100uF","",""
